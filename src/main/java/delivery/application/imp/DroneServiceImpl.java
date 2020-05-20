@@ -9,19 +9,16 @@ import java.util.List;
 
 public class DroneServiceImpl implements DroneService {
 
+  public DroneServiceImpl() {}
 
-    public DroneServiceImpl() {
+  @Override
+  public List<Drone> setupDrones(int dronesQuantity) {
+    ArrayList<Drone> drones = new ArrayList<Drone>();
+    Position defaultPosition = Position.defaultPosition();
+    for (int id = 1; id <= dronesQuantity; id++) {
+      String droneId = String.valueOf(id);
+      drones.add(new Drone(droneId, defaultPosition));
     }
-
-    @Override
-    public List<Drone> setupDrones(int dronesQuantity){
-        ArrayList<Drone> drones=new ArrayList<Drone>();
-        Position defaultPosition=Position.defaultPosition();
-        for(int id=1;id<=dronesQuantity;id++){
-            String droneId=String.valueOf(id);
-            drones.add(new Drone(droneId,defaultPosition));
-        }
-        return drones;
-
-    }
+    return drones;
+  }
 }

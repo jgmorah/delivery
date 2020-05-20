@@ -3,38 +3,53 @@ package delivery.domain;
 import java.util.ArrayList;
 
 public class Drone {
-    private String id;
+  private String id;
 
-    private Position currentPosition;
+  private Position currentPosition;
 
-    private ArrayList<Position> routeTraveled;
+  private ArrayList<Position> routeTraveled;
 
-    public Drone(String id, Position currentPosition) {
-        this.id = id;
-        this.currentPosition = currentPosition;
-    }
+  private ArrayList<String> instructions;
 
-    public String getId() {
-        return id;
-    }
+  public Drone(String id, Position currentPosition) {
+    this.id = id;
+    this.currentPosition = currentPosition;
+    this.routeTraveled = new ArrayList<>();
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public Position getCurrentPosition() {
-        return currentPosition;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public void setCurrentPosition(Position currentPosition) {
-        this.currentPosition = currentPosition;
-    }
+  public Position getCurrentPosition() {
+    return currentPosition;
+  }
 
-    public ArrayList<Position> getRouteTraveled() {
-        return routeTraveled;
-    }
+  public void setCurrentPosition(Position currentPosition) {
+    this.currentPosition = currentPosition;
+  }
 
-    public void setRouteTraveled(ArrayList<Position> routeTraveled) {
-        this.routeTraveled = routeTraveled;
-    }
+  public ArrayList<Position> getRouteTraveled() {
+    return routeTraveled;
+  }
+
+  public void setRouteTraveled(ArrayList<Position> routeTraveled) {
+    this.routeTraveled = routeTraveled;
+  }
+
+  public ArrayList<String> getInstructions() {
+    return instructions;
+  }
+
+  public void setInstructions(ArrayList<String> instructions) {
+    this.instructions = instructions;
+  }
+
+  public void addRouteTraveled(Position position) {
+    this.routeTraveled.add(position);
+  }
 }

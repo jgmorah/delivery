@@ -1,14 +1,15 @@
 package delivery.application;
 
+import delivery.domain.Drone;
 import delivery.domain.Position;
 import delivery.exceptions.InvalidMovementException;
 import delivery.exceptions.OutOfCoverageException;
 
 public interface MovementService {
 
-    Boolean validateInstructions(String instructions);
+  Boolean validateInstruction(String instruction);
 
-    void move(Position currentPosition, String instructions) throws InvalidMovementException, OutOfCoverageException;
+  void move(Drone drone) throws InvalidMovementException, OutOfCoverageException;
 
-    Boolean IsInCoverageZone(Position position);
+  Boolean IsInCoverageZone(Position position);
 }

@@ -2,40 +2,48 @@ package delivery.domain;
 
 public class Position {
 
-    private int coordinateX;
-    private int coordinateY;
-    private CardinalDirection direction;
+  private int coordinateX;
+  private int coordinateY;
+  private CardinalDirection direction;
 
-    public int getCoordinateX() {
-        return coordinateX;
-    }
+  public Position(Position sourcePosition) {
+    this.coordinateX = sourcePosition.getCoordinateX();
+    this.coordinateY = sourcePosition.getCoordinateY();
+    this.direction = sourcePosition.getDirection();
+  }
 
-    public void setCoordinateX(int coordinateX) {
-        this.coordinateX = coordinateX;
-    }
+  public Position() {}
 
-    public int getCoordinateY() {
-        return coordinateY;
-    }
+  public int getCoordinateX() {
+    return coordinateX;
+  }
 
-    public void setCoordinateY(int coordinateY) {
-        this.coordinateY = coordinateY;
-    }
+  public void setCoordinateX(int coordinateX) {
+    this.coordinateX = coordinateX;
+  }
 
-    public CardinalDirection getDirection() {
-        return direction;
-    }
+  public int getCoordinateY() {
+    return coordinateY;
+  }
 
-    public void setDirection(CardinalDirection direction) {
-        this.direction = direction;
-    }
+  public void setCoordinateY(int coordinateY) {
+    this.coordinateY = coordinateY;
+  }
 
-    public static Position defaultPosition() {
-        Position position = new Position();
-        position.coordinateX = 0;
-        position.coordinateY = 0;
-        position.direction = CardinalDirection.NORTH;
+  public CardinalDirection getDirection() {
+    return direction;
+  }
 
-        return position;
-    }
+  public void setDirection(CardinalDirection direction) {
+    this.direction = direction;
+  }
+
+  public static Position defaultPosition() {
+    Position position = new Position();
+    position.coordinateX = 0;
+    position.coordinateY = 0;
+    position.direction = CardinalDirection.NORTH;
+
+    return position;
+  }
 }
