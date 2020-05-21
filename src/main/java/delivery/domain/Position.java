@@ -12,7 +12,13 @@ public class Position {
     this.direction = sourcePosition.getDirection();
   }
 
-  public Position() {}
+  public Position() {
+    this.coordinateX = 0;
+    this.coordinateY = 0;
+    this.direction = CardinalDirection.NORTH;
+
+
+  }
 
   public int getCoordinateX() {
     return coordinateX;
@@ -38,12 +44,13 @@ public class Position {
     this.direction = direction;
   }
 
-  public static Position defaultPosition() {
-    Position position = new Position();
-    position.coordinateX = 0;
-    position.coordinateY = 0;
-    position.direction = CardinalDirection.NORTH;
 
-    return position;
+  @Override
+  public String toString() {
+    return "Position{" +
+            "coordinateX=" + coordinateX +
+            ", coordinateY=" + coordinateY +
+            ", direction=" + direction +
+            '}';
   }
 }

@@ -33,8 +33,8 @@ public class MovementServiceImpl implements MovementService {
 
   @Override
   public Boolean IsInCoverageZone(Position position) {
-    return position.getCoordinateX() <= droneDistanceLimit
-        && position.getCoordinateY() <= droneDistanceLimit;
+    return Math.abs(position.getCoordinateX()) <= droneDistanceLimit
+        && Math.abs(position.getCoordinateY()) <= droneDistanceLimit;
   }
 
   @Override
@@ -60,6 +60,7 @@ public class MovementServiceImpl implements MovementService {
     }
   }
 
+  @Override
   public Position advance(Position position) {
     switch (position.getDirection()) {
       case NORTH:
@@ -78,6 +79,7 @@ public class MovementServiceImpl implements MovementService {
     return position;
   }
 
+  @Override
   public Position turn(Position position, String instruction) {
     if (instruction.equals(TURN_RIGHT)) {
       switch (position.getDirection()) {

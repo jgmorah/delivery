@@ -12,4 +12,8 @@ public interface MovementService {
   void move(Drone drone) throws InvalidMovementException, OutOfCoverageException;
 
   Boolean IsInCoverageZone(Position position);
+
+  Position advance(Position position);
+
+  Position turn(Position position, String instruction);
 }

@@ -11,10 +11,11 @@ public class Drone {
 
   private ArrayList<String> instructions;
 
-  public Drone(String id, Position currentPosition) {
+  public Drone(String id, Position currentPosition, ArrayList<String> instructions){
     this.id = id;
     this.currentPosition = currentPosition;
     this.routeTraveled = new ArrayList<>();
+    this.instructions = instructions;
   }
 
   public String getId() {
